@@ -9,6 +9,22 @@
 //	    function(i){ return i + 1 }; // ES5
       let result = (i) => i + 1; // ES6
       console.info((i) => i + 1);
+      
+      class Animal {
+        constructor(){
+          this.type = 'animal';
+        }
+        says(say){
+          setTimeout( ()=>{
+            console.info(this.type + ' says '+ say);
+          }, 1000);
+        }
+      }
+      
+      var animal = new Animal();
+      
+      animal.says('hi');
+
 	  </script>
 	</body>
 </html>
