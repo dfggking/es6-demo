@@ -5,7 +5,43 @@
 		<title>ECMAScript6 关键字 let</title>
 	</head>
 	<body>
+	  
+	  <div>
+	    <p class="clickBox">btn1</p>
+	    <p class="clickBox">btn2</p>
+	    <p class="clickBox">btn3</p>
+	    <p class="clickBox">btn4</p>
+	    
+	  </div>
 		<script>
+			var name = 'jinyf';
+			let age = 20;
+			while(true){
+			  var name = 'obama';
+			  let age = 10;
+			  console.info(name); // obama
+			  console.info(age); // 10
+			  break;
+			}
+			console.info(name); // obama
+			console.info(age); // 20
+			
+			function iteratorFactory(i){
+        var onclick = function(e){
+          console.info(i);
+        }
+        return onclick;
+      }
+			var clickBox = document.querySelectorAll('.clickBox');
+			for (var i=0; i<clickBox.length; i++) {
+//				clickBox[i].onclick = function(){
+//				  console.info(i); // i = 4
+//				}
+        clickBox[i].onclick = iteratorFactory(i);
+			}
+			
+			
+			
 			
 		</script>
 	</body>
